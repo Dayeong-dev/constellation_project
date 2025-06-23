@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>별자리 찾기</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<section id="main">
+		<h1 id="main-title">생일로 알아보는</h1>
+		<h2 id="sub-title">나의 별자리 찾기!</h2>
+		<h3 id="sub-title2">월일을 선택해서 별자리를 찾아보세요.</h3>
+		<form id="form" action="/check" method="post">
+			<select id="month" name="month" onchange="setDayOption(event)">
+				<option value="" hidden="hidden">월 선택</option>
+				<option value="1">1월</option>
+				<option value="2">2월</option>
+				<option value="3">3월</option>
+				<option value="4">4월</option>
+				<option value="5">5월</option>
+				<option value="6">6월</option>
+				<option value="7">7월</option>
+				<option value="8">8월</option>
+				<option value="9">9월</option>
+				<option value="10">10월</option>
+				<option value="11">11월</option>
+				<option value="12">12월</option>
+			</select>
+			<select id="day" name="day">
+				<option value="" hidden="hidden">일 선택</option>
+			</select>
+			<input type="submit" value="확인하기" />
+		</form>
+	</section>
+	<script>
+		const monthArr = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		
+		const $month = document.getElementById("month");
+		const $day = document.getElementById("day");
+		const $form = document.querySelector("form");
+		
+		function setDayOption(e) {
+			$day.innerHTML = "";
+			
+			const month = +e.target.value;
+			const option1 = document.createElement("option");
+			
+			option1.value = "";
+			option1.hidden = "hidden";
+			option1.text = "일 선택";		
+			$day.appendChild(option1);		
+			
+			for(let i = 0; i < monthArr[month - 1]; i++) {
+				const option2 = document.createElement("option");
+				
+				option2.value = i+1;
+				option2.text = `${i+1}일`;
+				
+				$day.appendChild(option2);
+			}
+		}
+		
+		$form.addEventListener("submit", e => {
+			e.preventDefault();
+			
+			console.log()
+			
+			if($month.value.trim() === "") {
+				alert("월을 선택해주세요. ");
+				$month.focus();
+				return;
+			}
+			
+			if($day.value.trim() === "") {
+				alert("일을 선택해주세요. ");
+				$day.focus();
+				return;
+			}
+			
+			$form.submit();
+		});
+		
+	</script>
+</body>
+</html>

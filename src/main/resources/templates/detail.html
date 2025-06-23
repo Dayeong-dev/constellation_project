@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>내 별자리는??</title>
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<section id="detail">
+		<h1 id="main-title">내 별자리는?</h1>
+		<img th:src="${'https://blog.kakaocdn.net/dn/dgMoKy/btqXb1aT5Gg/ZmZ517aDp22NP7qrF9iQt1/img.jpg'}" th:alt="'물병자리'" />
+		<p id="sub-title"><span th:text="'물병자리'"></span> 입니다!</p>
+		<button onclick="history.back()">← 메인으로 돌아가기</button>
+	</section>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'BNKGothic';
+    src: url('/fonts/BNKGothic-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	color: #fff;
+	font-size: 16px;
+	font-family: 'BNKGothic';
+	
+	width: 100%;
+	min-height: 100vh;
+	background-image: url("/images/background.gif");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+section {
+	width: 100%;
+	min-height: 100vh;
+	background-color: rgba(0, 0, 0, 0.3);
+	
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#main #main-title {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+#main #sub-title {
+	font-size: 3rem;
+}
+
+#main #sub-title2 {
+	font-size: 1rem;
+	margin: 2rem 0;
+}
+
+#main #form {
+	display: flex;
+	column-gap: 1rem;
+}
+
+#main #form select {
+	padding: 0.25rem 0.5rem;
+	border-radius: 0.25rem;
+}
+
+#main #form input[type="submit"] {
+	border: 1px solid #fff;
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.3);
+	
+	color: #fff;
+	font-weight: bold;
+	padding: 0.5rem 1rem;
+	
+	cursor: pointer;
+	
+	transition: all 0.1s ease;
+}
+
+#main #form input[type="submit"]:hover {
+	color: #000;
+	background-color: rgba(255, 255, 255, 1);
+}
+
+#detail #main-title {
+	font-size: 2rem;
+	margin-bottom: 1rem;
+}
+
+#detail img {
+	width: 20rem;
+	height: 20rem;
+	object-fit: cover;
+	
+	border: 2px solid #fff;
+}
+
+#detail #sub-title {
+	font-size: 1.5rem;
+	margin: 1rem;
+}
+
+#detail #sub-title span {
+	font-size: 1.75rem;
+	color: #FFBB00;
+}
+
+#detail button {
+	color: #fff;
+	font-size: 1rem;
+	
+	border: none;
+	background-color: rgba(0, 0, 0, 0);
+	cursor: pointer;
+}
